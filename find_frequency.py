@@ -1,16 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 10 21:18:49 2021
-
-@author: phil.hunter
-"""
-
 
 import numpy as np
-from sklearn.linear_model import LinearRegression
-import statsmodels as sm
-import math
-from statsmodels.tsa.stattools import acf, pacf
 from spectrum import *
 import pandas as pd
 
