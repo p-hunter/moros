@@ -2,6 +2,9 @@
 import numpy as np
 from spectrum import *
 import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+import math 
 
 
 def which_max(x):
