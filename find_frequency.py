@@ -17,20 +17,15 @@ def spec_yw(x,o):
 
 def find_frequency(x):
     n = len(x)    
-    print("\nLength of x: {}\n".format(n))    
     trend = np.linspace(1, n, n).reshape(-1, 1)    
-    print("\nTime Trend Aquired\n")    
     m = LinearRegression().fit(trend, x)    
-    print("\n Linear Model Fitted\n")    
     # remove time trend from x
     x = m.predict(trend) - x        
-    print("\nTime Trend Stripped from x\n")
-    print(x)
+    
     o = min([n - 1, math.floor(10 * math.log10(n))])
     print("\nOrder of data: {}\n".format(o))
     n_freq = 500
     spec = pyule(x, order = o, NFFT = n_freq)
-    print("\nSpectral YW Mod Ran\n")
     spec_df = pd.DataFrame({
         "PSD" : spec.psd,
         "Freq" : spec.frequencies()        
