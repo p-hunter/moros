@@ -16,7 +16,7 @@ def fast_pdist(x):
   
   import numpy as np
   
-  xn = map(np.cross, [x,x])
+  xn = map(np.dot, [x.T,x])
   
   n = len(x)
   
@@ -24,7 +24,7 @@ def fast_pdist(x):
   
   m_temp = xn + [xn.T] * n
   
-  return(sqrt(m_temp - 2 * np.cross(x, x.T)))
+  return(sqrt(m_temp - 2 * np.dot(x, x.T)))
   
   
   
