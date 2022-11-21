@@ -1,8 +1,3 @@
-
-
-
-
-
 def fast_pdist(x):
   
   """
@@ -16,17 +11,21 @@ def fast_pdist(x):
   
   import numpy as np
   
-  xn = map(np.dot, [x.T,x])
-  
   n = len(x)
   
-  m_temp = [xn] * n
+  xn = [np.matmul(x[i].T, x[i]) for i in range(n)]
   
-  m_temp = xn + [xn.T] * n
+  m_temp_1= np.array([np.array(xn)] * n).T
   
-  return(sqrt(m_temp - 2 * np.dot(x, x.T)))
+  m_temp_2 =  m_temp_1.T
   
+  m_temp = m_temp_1 + m_temp_2
   
+  m_out = m_temp - 2 * np.matmul(x, x.T)
   
-  
-  
+  return(sqrt(m_out))
+
+
+
+
+
