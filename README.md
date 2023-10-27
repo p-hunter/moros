@@ -1,1 +1,1 @@
-# MOROS: miscellaneous time-series functions in Python
+# MOROS: miscellaneous functions in Python
