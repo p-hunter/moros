@@ -35,7 +35,7 @@ class OneHotLumper(BaseEstimator, TransformerMixin):
         vc = X.value_counts()
         crit = (vc / vc.sum()).lt(self.thres)
         X = np.array(np.where(X.isin(vc[crit].index), self.other, X))
-        X = self.encoder.fit_transform(X)
+        X = self.encoder.fit_transform(X.reshape(-1, 1))
         return X
 
 
