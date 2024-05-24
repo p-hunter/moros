@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "moros"
+version = "0.1.0"
+description = "miscellaneous functions in python"
+authors = ["Phil Hunter <philhunter93@live.co.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.26.4"
+pandas = "^2.2.2"
+scipy = "^1.13.1"
+spectrum = "^0.8.1"
+scikit-learn = "^1.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
